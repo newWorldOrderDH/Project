@@ -28,11 +28,11 @@ document.addEventListener('DOMContentLoaded', function() {
     var databaseRef = database.ref().child('chat1');
 
     sendButton.addEventListener('click', function(evt) {
-        var chat = {
+        var chat1 = {
             name: username,
             message: textInput.value
         };
-        databaseRef.push().set(chat);
+        databaseRef.push().set(chat1);
         textInput.value = '';
     });
 
