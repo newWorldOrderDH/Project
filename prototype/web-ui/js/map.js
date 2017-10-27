@@ -11,7 +11,8 @@ document.getElementById("text")
 function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: -34.397, lng: 150.644 },
-        zoom: 14
+        zoom: 14,
+        width: 100
     });
     var infoWindow = new google.maps.InfoWindow({ map: map });
 
@@ -59,3 +60,5 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         });
     });
 }
+
+

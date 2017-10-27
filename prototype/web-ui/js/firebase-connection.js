@@ -105,11 +105,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function addMessage(chat) {
         var li = document.createElement('li');
-        li.className = "list-group-item list-group-item-success";
+        li.className = "list-group-item";
         var nameElm = document.createElement('h4');
         nameElm.innerText = chat.name;
         li.appendChild(nameElm);
-        li.className = 'highlight';
         if (chat.message.indexOf("https://firebasestorage.googleapis.com/") == 0 ||
             chat.message.indexOf("https://lh3.googleusercontent.com/") == 0 ||
             chat.message.indexOf("http://pbs.twimg.com/") == 0 ||
