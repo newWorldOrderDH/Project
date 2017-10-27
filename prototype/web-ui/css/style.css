@@ -1,34 +1,25 @@
-.container {
+.container1 {
     padding: 0;
     margin: 0;
+    display: flex;
+  flex-direction: column;
 }
+.chat-section{
 
+
+}
 #map {
-    width: 100%;
-    height: 650px;
+    width: 70%;
+    height: 100vh;
     background-color: grey;
-    padding: 0;
-    margin: 0;
 }
 
-.map-section {
-    padding: 0;
-}
-
-.chat-section {
-}
 
 .btn-send{
-    height: 60px;
-    width: 250px;
-    margin-top: 10px;
     font-size: 18px;
 }
 
 .btn-out {
-    height: 60px;
-    width: 250px;
-    margin-top: 10px;
     font-size: 18px;
 }
 
@@ -38,7 +29,6 @@
     max-height: 60vh;
     width: 20%;
     overflow: auto;
-    margin-top: 100px;
     width: 320px;
 }
 #messages img {
@@ -48,8 +38,7 @@
 }
 
 #header {
-    position: absolute;
-
+  margin-top: 20px;
     background-color: white;
 }
 
