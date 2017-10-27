@@ -29,10 +29,12 @@
             <div class="push"></div>
             <ul id='messages'></ul>
             <div id='footer'>
+              <form>
                 <img src="https://www.gstatic.com/images/icons/material/system/1x/add_a_photo_black_24dp.png" width="24" />
                 <input type="file" id="file" name="file" />
                 <input id='text'></input>
-                <button id='send'>Send</button>
+                <button id='send' type="submit">Send</button>
+              </form>
         </div>
         </div>
     </div>
@@ -40,21 +42,9 @@
 
     <script src="https://www.gstatic.com/firebasejs/3.0.0/firebase.js"></script>
     <script src="js/gulp.js"></script>
-    <script>
-      function initMap() {
-        var uluru = {lat: 49.8403146, lng: 24.02490};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 13,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
-    </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhZG8wNs9JvEMBzOiHPM1QUnYjn07GEos&callback=initMap">
+
     </script>
   <script src="js/gulp.js"></script>
 </body>

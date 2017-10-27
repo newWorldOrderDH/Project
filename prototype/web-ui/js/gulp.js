@@ -121,3 +121,47 @@ document.addEventListener('DOMContentLoaded', function() {
     //for (var i=0; i < 10; i++) addMessage({ name: "Web", message: ''+i });
     setUsername('Web');
 });
+
+
+var map;
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 13,
+      center: new google.maps.LatLng(49.839311, 24.026990),
+      mapTypeId: 'roadmap'
+    });
+
+    var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+    var icons = {
+      parking: {
+        icon: iconBase + 'parking_lot_maps.png'
+      },
+      library: {
+        icon: iconBase + 'library_maps.png'
+      },
+      info: {
+        icon: iconBase + 'info-i_maps.png'
+      }
+    };
+    var features = [
+      {
+        position: new google.maps.LatLng(49.843453, 24.035794),
+        type: 'info'
+      }, {
+        position: new google.maps.LatLng(-33.91539, 151.22820),
+        type: 'info'
+      }, {
+        position: new google.maps.LatLng(-33.91747, 151.22912),
+        type: 'info'
+      }
+    ];
+
+    // Create markers.
+    features.forEach(function(feature) {
+      var marker = new google.maps.Marker({
+        position: feature.position,
+        icon: icons[feature.type].icon,
+        map: map
+      });
+    });
+  }
