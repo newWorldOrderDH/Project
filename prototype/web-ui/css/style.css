@@ -1,7 +1,10 @@
 #messages {
     width: 40em;
     border: 1px solid grey;
-    min-height: 20em;
+    min-height: 50vh;
+    max-height: 70vh;
+    width: 20%;
+    overflow: auto;
 }
 
 #messages img {
