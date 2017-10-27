@@ -48,7 +48,7 @@ function initMap() {
         width: 100
     });
 
-    
+    var infoWindow = new google.maps.InfoWindow({ map: map });
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
