@@ -1,0 +1,133 @@
+.container1 {
+    padding: 0;
+    margin: 0;
+}
+.chat-section{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-left: 20px;
+width: 30%;
+height: 100vh;
+}
+
+#map {
+    width: 70%;
+    height: 100vh;
+    background-color: grey;
+}
+
+
+.btn-send{
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+    font-size: 18px;
+}
+
+.btn-out {
+    font-size: 18px;
+}
+
+#messages {
+    border: 1px solid grey;
+    height: 70vh;
+    overflow: auto;
+}
+#messages img {
+    max-width: 240px;
+    max-height: 160px;
+    display: block;
+}
+
+#header {
+  margin-top: 20px;
+    background-color: white;
+}
+
+.push {
+    margin-bottom: 2em;
+}
+
+@keyframes yellow-fade {
+    0% {
+        background: #f2f2b8;
+    }
+    100% {
+        background: none;
+    }
+}
+
+.highlight {
+    -webkit-animation: yellow-fade 2s ease-in 1;
+    animation: yellow-fade 2s ease-in 1;
+}
+
+.fileContainer {
+    overflow: hidden;
+    position: relative;
+}
+
+
+.fileContainer [type=file] {
+    cursor: pointer;
+    display: block;
+    font-size: 999px;
+    filter: alpha(opacity=0);
+    min-height: 100%;
+    min-width: 100%;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 0;
+}
+
+
+@media screen and (max-width: 768px){
+  .chat-section{
+    position: relative;
+    padding: 20px;
+    width: 100%;
+    z-index: 10;
+    height: 100vh;
+  }
+  #map{
+    width: 100%;
+    z-index: -10;
+  }
+  .list-group{
+    margin-bottom: 0;
+  }
+  .fileContainer [type=file] {
+      cursor: pointer;
+      display: block;
+      font-size: 999px;
+      filter: alpha(opacity=0);
+      min-height: 100%;
+      min-width: 100%;
+      opacity: 0;
+      position: absolute;
+      right: 0;
+      text-align: right;
+      top: 0;
+  }
+  .btn-send{
+    width: 100%;
+      font-size: 18px;
+  }
+}
+
+.long2 {
+    width: 100%;
+    min-height: 30px;
+
+    display: block;
+    resize: none;
+    outline: none;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    vertical-align: middle
+}
