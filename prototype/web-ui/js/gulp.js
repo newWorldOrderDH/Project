@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         auth = app.auth(),
         storage = app.storage();
 
-    var databaseRef = database.ref().child('chat');
+    var databaseRef = database.ref().child('chat1');
 
     sendButton.addEventListener('click', function(evt) {
         var chat = {
