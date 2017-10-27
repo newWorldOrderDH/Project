@@ -107,8 +107,12 @@ document.addEventListener('DOMContentLoaded', function() {
         var li = document.createElement('li');
         li.className = "list-group-item";
         var nameElm = document.createElement('h4');
+        now = new Date();
+        var time = document.createElement('h6');
+        time.innerText = now.getHours()+':'+now.getMinutes()+':'+now.getSeconds();
         nameElm.innerText = chat.name;
         li.appendChild(nameElm);
+        li.appendChild(time);
         if (chat.message.indexOf("https://firebasestorage.googleapis.com/") == 0 ||
             chat.message.indexOf("https://lh3.googleusercontent.com/") == 0 ||
             chat.message.indexOf("http://pbs.twimg.com/") == 0 ||
