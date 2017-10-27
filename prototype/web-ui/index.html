@@ -1,50 +1,81 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="Modern effects and styles for off-canvas navigation with CSS transitions and SVG animations using Snap.svg" />
+		<meta name="keywords" content="sidebar, off-canvas, menu, navigation, effect, inspiration, css transition, SVG, morphing, animation" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/menu_sideslide.css" />
+    
     <title>nWo Digital Hackaton</title>
-</head>
-
+  </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 map-section">
-                <div id="map">
-                </div>
+<div class="container">
+			<div class="menu-wrap">
+				<nav class="menu">
+					<div class="icon-list">
+						<a href="#"><i class="fa fa-fw fa-star-o"></i><span>Favorites</span></a>
+						<a href="#"><i class="fa fa-fw fa-bell-o"></i><span>Alerts</span></a>
+						<a href="#"><i class="fa fa-fw fa-envelope-o"></i><span>Messages</span></a>
+						<a href="#"><i class="fa fa-fw fa-comment-o"></i><span>Comments</span></a>
+						<a href="#"><i class="fa fa-fw fa-bar-chart-o"></i><span>Analytics</span></a>
+						<a href="#"><i class="fa fa-fw fa-newspaper-o"></i><span>Reading List</span></a>
+					</div>
+				</nav>
+				<button class="close-button" id="close-button">Close Menu</button>
+			</div>
+			<button class="menu-button" id="open-button">Open Menu</button>
+			<div class="content-wrap">
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 map-section">
+            <div id="map">
             </div>
-            <div class="col-md-2 chat-section">
-                <div id='header'>
-                    <label for='username'>
+        </div>
+        <div class="col-md-2 chat-section">
+            <div id='header'>
+                <label for='username'>
                 <img src="https://www.gstatic.com/images/icons/material/system/1x/account_box_black_24dp.png" width="24"/></label>
-                    <span id='username'></span>
-                    <span id='login'>
+                <span id='username'></span>
+                <span id='login'>
                 <button id='google' class='idp-button'>Sign in with Google</button>
                 <button id='facebook' class='idp-button'>Sign in with Facebook</button>
                 </span>
-                    <button id='logout' class='idp-button'>Sign out</button>
-                </div>
-                <div class="push"></div>
-                <ul id='messages'></ul>
-                <div id='footer'>
-
-                    <img src="https://www.gstatic.com/images/icons/material/system/1x/add_a_photo_black_24dp.png" width="24" />
-                    <input type="file" id="file" name="file" />
-                    <input id='text'></input>
-                    <button id='send' type="submit">send</button>
-                </div>
+                <button id='logout' class='idp-button'>Sign out</button>
             </div>
+            <div class="push"></div>
+            <ul id='messages'></ul>
+            <div id='footer'>
+              <form>
+                <img src="https://www.gstatic.com/images/icons/material/system/1x/add_a_photo_black_24dp.png" width="24" />
+                <input type="file" id="file" name="file" />
+                <input id='text'></input>
+                <button id='send' type="submit">Send</button>
+              </form>
+        </div>
         </div>
     </div>
+</div>
 
+			</div><!-- /content-wrap -->
+		</div><!-- /container -->
+    <script src="js/classie.js"></script>	
+   	<script src="js/main.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.0.0/firebase.js"></script>
-    <script src="js/map.js"></script>
-    <script src="js/firebase-connection.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhZG8wNs9JvEMBzOiHPM1QUnYjn07GEos&callback=initMap"></script>
+    <script src="js/gulp.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhZG8wNs9JvEMBzOiHPM1QUnYjn07GEos&callback=initMap">
+
+    </script>
+  <script src="js/map.js"></script>
 </body>
 
 </html>
