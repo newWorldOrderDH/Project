@@ -131,22 +131,20 @@ var map;
       mapTypeId: 'roadmap'
     });
 
-    var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
     var icons = {
       parking: {
-        icon: iconBase + 'parking_lot_maps.png'
+        url: "img/ball.svg"
       },
       library: {
-        icon: iconBase + 'library_maps.png'
+        url: "img/ball.svg"
       },
-      info: {
-        icon: iconBase + 'info-i_maps.png'
-      }
-    };
+      icon: {
+      url: "img/ball.svg"
+    }};
     var features = [
       {
         position: new google.maps.LatLng(49.843453, 24.035794),
-        type: 'info'
+        type: 'parking'
       }, {
         position: new google.maps.LatLng(-33.91539, 151.22820),
         type: 'info'
@@ -155,6 +153,8 @@ var map;
         type: 'info'
       }
     ];
+
+
 
     // Create markers.
     features.forEach(function(feature) {
