@@ -132,28 +132,15 @@ function initMap() {
         mapTypeId: 'roadmap'
     });
 
-    var icons = {
-        parking: {
-            url: "img/ball.svg"
-        },
-        library: {
-            url: "img/ball.svg"
-        },
-        icon: {
-            url: "img/ball.svg"
-        }
-    };
-    var features = [{
-        position: new google.maps.LatLng(49.843453, 24.035794),
-        type: 'parking'
-    }, {
-        position: new google.maps.LatLng(-33.91539, 151.22820),
-        type: 'info'
-    }, {
-        position: new google.maps.LatLng(-33.91747, 151.22912),
-        type: 'info'
-    }];
-
+    var marker = new google.maps.Marker({
+  	position: {lat: 49.842401, lng: 24.03599},
+  	map: map,
+  	title: 'Legalizuem.ru',
+  	icon: {
+  		url: "img/ball.svg",
+  		scaledSize: new google.maps.Size(32, 32)
+  	}
+  });
     document.getElementById("text")
         .addEventListener("keyup", function(event) {
             event.preventDefault();
