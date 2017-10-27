@@ -21,19 +21,18 @@
             </div>
             <div class="col-md-2 chat-section">
                 <div id='header'>
-                    <div class="row">
                     <label for='username'>
-                <img src="https://www.gstatic.com/images/icons/material/system/1x/account_box_black_24dp.png" width="24"/></label>
+                <img src="https://www.gstatic.com/images/icons/material/system/1x/account_box_black_24dp.png" width=""/></label>
                     <span id='username'></span>
                     <span id='login'>
-
-                <button id='google' class='btn-google'>Sign in with Google</button>
-                <button id='facebook' class='btn-facebook'>Sign in with Facebook</button>
+                
+                <button id='google' class='btn-google' style="background-image: url(img/google-plus.svg); width: 50px; height: 50px;"></button>
+                <button id='facebook' class='btn-facebook' style="background-image: url(img/facebook.svg); width: 50px; height: 50px; "></button>
 
                 </span>
-                    <button id='logout' class='btn btn-info'>Sign out</button>
+                    <button id='logout' class='btn btn-info btn-out'>Sign out</button>
                 </div>
-                </div>
+                
                 <div class="push"></div>
                 <ul id='messages' class="list-group"></ul>
                 <div id='footer'>
@@ -41,9 +40,9 @@
                     <img src="https://www.gstatic.com/images/icons/material/system/1x/add_a_photo_black_24dp.png" width="24" />
                     <input type="file" id="file" name="file"  />
                     <input id='text'>
-                    <button id='send' type="submit" class="btn btn-info">Send</button>
+                    <button id='send' type="submit" class="btn btn-info btn-send">Send</button>
+                    </div>
                 </div>
-            </div>
         </div>
     </div>
 
