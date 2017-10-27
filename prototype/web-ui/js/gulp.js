@@ -135,10 +135,9 @@ function initMap() {
     var marker = new google.maps.Marker({
   	position: {lat: 49.842401, lng: 24.03599},
   	map: map,
-  	title: 'Legalizuem.ru',
   	icon: {
   		url: "img/ball.svg",
-  		scaledSize: new google.maps.Size(32, 32)
+  		scaledSize: new google.maps.Size(32,32)
   	}
   });
     document.getElementById("text")
