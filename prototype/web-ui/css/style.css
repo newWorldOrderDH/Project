@@ -1,13 +1,16 @@
 .container1 {
     padding: 0;
     margin: 0;
-    display: flex;
-  flex-direction: column;
 }
 .chat-section{
-
-
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-left: 20px;
+width: 30%;
+height: 100vh;
 }
+
 #map {
     width: 70%;
     height: 100vh;
@@ -16,6 +19,10 @@
 
 
 .btn-send{
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  position: absolute;
     font-size: 18px;
 }
 
