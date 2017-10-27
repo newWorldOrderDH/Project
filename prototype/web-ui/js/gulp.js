@@ -25,14 +25,14 @@ document.addEventListener('DOMContentLoaded', function() {
         auth = app.auth(),
         storage = app.storage();
 
-    var databaseRef = database.ref().child('chat1');
+    var databaseRef = database.ref().child('chat3');
 
     sendButton.addEventListener('click', function(evt) {
-        var chat1 = {
+        var chat3 = {
             name: username,
             message: textInput.value
         };
-        databaseRef.push().set(chat1);
+        databaseRef.push().set(chat3);
         textInput.value = '';
     });
 
