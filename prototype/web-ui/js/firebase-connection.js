@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var nameElm = document.createElement('h4');
         now = new Date();
         var time = document.createElement('h6');
-        time.innerText = now.getHours()+':'+now.getMinutes()+':'+now.getSeconds();
+        time.innerText = ('00'+now.getHours()).slice(-2)+':'+('00' + now.getMinutes()).slice(-2)+':'+('00'+now.getSeconds()).slice(-2);
         nameElm.innerText = chat.name;
         li.appendChild(nameElm);
         li.appendChild(time);
