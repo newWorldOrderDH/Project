@@ -27,18 +27,10 @@ $('textarea').keyup(function(event) {
             event.stopPropagation();
         } else {
             this.value = content.substring(0, caret - 1) + content.substring(caret, content.length);
-            $('form').submit();
+            document.getElementById("send").click();
         }
     }
 });
-
-document.getElementById("text")
-    .addEventListener("keyup", function(event) {
-        event.preventDefault();
-        if (event.keyCode === 13) {
-            document.getElementById("send").click();
-        }
-    });
 
 var contentString = '<div id="content">' +
     '<div id="siteNotice">' +
@@ -56,13 +48,7 @@ function initMap() {
         width: 100
     });
 
-
-
-
     var infoWindow = new google.maps.InfoWindow({ map: map });
-
-
-
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
