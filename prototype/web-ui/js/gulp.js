@@ -124,44 +124,52 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 var map;
-  function initMap() {
+
+function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 13,
-      center: new google.maps.LatLng(49.839311, 24.026990),
-      mapTypeId: 'roadmap'
+        zoom: 13,
+        center: new google.maps.LatLng(49.839311, 24.026990),
+        mapTypeId: 'roadmap'
     });
 
     var icons = {
-      parking: {
-        url: "img/ball.svg"
-      },
-      library: {
-        url: "img/ball.svg"
-      },
-      icon: {
-      url: "img/ball.svg"
-    }};
-    var features = [
-      {
+        parking: {
+            url: "img/ball.svg"
+        },
+        library: {
+            url: "img/ball.svg"
+        },
+        icon: {
+            url: "img/ball.svg"
+        }
+    };
+    var features = [{
         position: new google.maps.LatLng(49.843453, 24.035794),
         type: 'parking'
-      }, {
+    }, {
         position: new google.maps.LatLng(-33.91539, 151.22820),
         type: 'info'
-      }, {
+    }, {
         position: new google.maps.LatLng(-33.91747, 151.22912),
         type: 'info'
-      }
-    ];
+    }];
+
+    document.getElementById("text")
+        .addEventListener("keyup", function(event) {
+            event.preventDefault();
+            if (event.keyCode === 13) {
+                document.getElementById("send").click();
+            }
+        });
 
 
 
     // Create markers.
     features.forEach(function(feature) {
-      var marker = new google.maps.Marker({
-        position: feature.position,
-        icon: icons[feature.type].icon,
-        map: map
-      });
+        var marker = new google.maps.Marker({
+            position: feature.position,
+            icon: icons[feature.type].icon,
+            map: map
+        });
     });
-  }
+}
