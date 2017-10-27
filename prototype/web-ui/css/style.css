@@ -105,3 +105,16 @@ ul li {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
     background-color: #D62929;
 }
+
+.long2 {
+    width: 100%;
+    min-height: 30px;
+
+    display: block;
+    resize: none;
+    outline: none;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    vertical-align: middle
+}
