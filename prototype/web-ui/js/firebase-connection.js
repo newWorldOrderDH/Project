@@ -105,6 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function addMessage(chat) {
         var li = document.createElement('li');
+        li.className = "list-group-item list-group-item-success";
         var nameElm = document.createElement('h4');
         nameElm.innerText = chat.name;
         li.appendChild(nameElm);
