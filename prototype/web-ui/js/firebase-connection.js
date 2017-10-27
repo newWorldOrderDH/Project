@@ -51,6 +51,14 @@ document.addEventListener('DOMContentLoaded', function() {
     logout.addEventListener('click', function(e) {
         auth.signOut();
     });
+
+    facebookLogin.addEventListener('click', function(e) {
+        auth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
+    });
+    // Allow the user to sign out
+    logout.addEventListener('click', function(e) {
+        auth.signOut();
+    });
     // When the user signs in or out, update the username we keep for them
     auth.onAuthStateChanged(function(user) {
         if (user) {
@@ -121,41 +129,3 @@ document.addEventListener('DOMContentLoaded', function() {
     //for (var i=0; i < 10; i++) addMessage({ name: "Web", message: ''+i });
     setUsername('Web');
 });
-
-
-var map;
-
-function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 13,
-        center: new google.maps.LatLng(49.839311, 24.026990),
-        mapTypeId: 'roadmap'
-    });
-
-    var marker = new google.maps.Marker({
-  	position: {lat: 49.842401, lng: 24.03599},
-  	map: map,
-  	icon: {
-  		url: "img/ball.svg",
-  		scaledSize: new google.maps.Size(32,32)
-  	}
-  });
-    document.getElementById("text")
-        .addEventListener("keyup", function(event) {
-            event.preventDefault();
-            if (event.keyCode === 13) {
-                document.getElementById("send").click();
-            }
-        });
-
-
-
-    // Create markers.
-    features.forEach(function(feature) {
-        var marker = new google.maps.Marker({
-            position: feature.position,
-            icon: icons[feature.type].icon,
-            map: map
-        });
-    });
-}
