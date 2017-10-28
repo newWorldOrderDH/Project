@@ -137,9 +137,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function AddChat() {
-        document.getElementById('text').style.display = 'block';
-        document.getElementById('footer').style.display = 'block';
-        document.getElementById('messages').style.display = 'block';
+        document.getElementById('text').style.display = 'none';
+        document.getElementById('footer').style.display = 'none';
+        document.getElementById('messages').style.display = 'none';
         document.getElementById('about').style.display = 'none';
     }
 

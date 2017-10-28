@@ -1,4 +1,23 @@
+
+
 var map;
+
+function AddChat1() {
+    document.getElementById('text').style.display = 'block';
+    document.getElementById('footer').style.display = 'block';
+    document.getElementById('messages').style.display = 'block';
+    document.getElementById('about').style.display = 'none';
+}
+
+
+function RemoveChat1() {
+    document.getElementById('text').style.display = 'none';
+    document.getElementById('footer').style.display = 'none';
+    document.getElementById('messages').style.display = 'none';
+    document.getElementById('about').style.display = 'block';
+
+}
+
 
 function getCaret(el) {
     if (el.selectionStart) {
@@ -154,8 +173,11 @@ function initMap() {
             }
         });
         google.maps.event.addListener(marker, 'click', function(evt) {
+            RemoveChat1();
+            AddChat1();
             infowindow.setContent(location.info);
             infowindow.open(map, marker);
+
         })
         return marker;
     });
