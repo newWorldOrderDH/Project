@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             // User signed out, set a default username
             setUsername("");
+            RemoveChat();
         }
     });
 
@@ -140,6 +141,14 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('footer').style.display = 'block';
         document.getElementById('messages').style.display = 'block';
     }
+
+
+    function RemoveChat() {
+        document.getElementById('text').style.display = 'none';
+        document.getElementById('footer').style.display = 'none';
+        document.getElementById('messages').style.display = 'none';
+    }
+
     //window.app = app; // NOTE: just for debugging
     //for (var i=0; i < 10; i++) addMessage({ name: "Web", message: ''+i });
 });
