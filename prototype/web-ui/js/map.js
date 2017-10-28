@@ -44,8 +44,8 @@ var contentString = '<div id="content">' +
 function initMap() {
 
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 3,
-        center: { lat: -28.024, lng: 140.887 },
+        zoom: 14,
+        center: { lat: 49.837505, lng: 24.032027 },
         styles: [{
             "featureType": "water",
             "elementType": "geometry",
@@ -134,9 +134,13 @@ function initMap() {
         }, {}],
     });
 
+
     // Create an array of alphabetical characters used to label the markers.
     var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var infowindow = new google.maps.InfoWindow({
+        content: contentString
 
+    });
     // Add some markers to the map.
     // Note: The code uses the JavaScript Array.prototype.map() method to
     // create an array of markers based on a given "locations" array.
@@ -144,25 +148,28 @@ function initMap() {
     var markers = locations.map(function(location, i) {
         return new google.maps.Marker({
             position: location,
+
             label: labels[i % labels.length]
         });
     });
+
+
+
 
     // Add a marker clusterer to manage the markers.
     var markerCluster = new MarkerClusterer(map, markers, { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
 }
 var locations = [
-{ lat: 49.827678, lng: 24.009748 },
+    { lat: 49.827678, lng: 24.009748 },
     { lat: 49.828094, lng: 24.024636 },
     { lat: 49.822882, lng: 24.030011 },
     { lat: 49.829729, lng: 24.035933 },
     { lat: 49.829016, lng: 24.040664 },
-    { lat: 49.836154, lng: 24.045871},
+    { lat: 49.836154, lng: 24.045871 },
     { lat: 49.835228, lng: 24.051481 },
     { lat: 49.842313, lng: 24.042909 },
     { lat: 49.841194, lng: 24.049651 },
-    { lat: 49.840892, lng: 24.041287},
-
+    { lat: 49.840892, lng: 24.041287 },
 ]
 
 
