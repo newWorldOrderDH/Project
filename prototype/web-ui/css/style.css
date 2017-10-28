@@ -138,6 +138,8 @@ ul li {
 }
 
 .long2 {
+  border: 1px solid #ddd;
+    border-radius: 5px;
     width: 100%;
     min-height: 30px;
     display: block;
