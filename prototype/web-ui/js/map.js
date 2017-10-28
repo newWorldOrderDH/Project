@@ -42,45 +42,141 @@ var contentString = '<div id="content">' +
     '</div>';
 
 function initMap() {
+
     var map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: -34.397, lng: 150.644 },
-        zoom: 14,
-        width: 100
+        zoom: 3,
+        center: { lat: -28.024, lng: 140.887 },
+        styles: [{
+            "featureType": "water",
+            "elementType": "geometry",
+            "stylers": [{
+                "color": "#1c4f54"
+            }]
+        }, {
+            "featureType": "landscape",
+            "elementType": "geometry",
+            "stylers": [{
+                "color": "#436775"
+            }]
+        }, {
+            "featureType": "road",
+            "elementType": "geometry",
+            "stylers": [{
+                "color": "#318c94"
+            }, {
+                "lightness": -37
+            }]
+        }, {
+            "featureType": "poi",
+            "elementType": "geometry",
+            "stylers": [{
+                "color": "#49717f"
+            }]
+        }, {
+            "featureType": "transit",
+            "elementType": "geometry",
+            "stylers": [{
+                "color": "#49717f"
+            }]
+        }, {
+            "elementType": "labels.text.stroke",
+            "stylers": [{
+                "visibility": "on"
+            }, {
+                "color": "#226166"
+            }, {
+                "weight": 2
+            }, {
+                "gamma": 0.84
+            }]
+        }, {
+            "elementType": "labels.text.fill",
+            "stylers": [{
+                "color": "#ffffff"
+            }]
+        }, {
+            "featureType": "administrative",
+            "elementType": "geometry",
+            "stylers": [{
+                "weight": 0.6
+            }, {
+                "color": "#1c4f54"
+            }]
+        }, {
+            "elementType": "labels.icon",
+            "stylers": [{
+                "visibility": "off"
+            }]
+        }, {
+            "featureType": "poi.park",
+            "elementType": "geometry",
+            "stylers": [{
+                "color": "#436775"
+            }]
+        }, {
+            "featureType": "administrative.locality",
+            "elementType": "labels",
+            "stylers": [{
+                "visibility": "on"
+            }]
+        }, {
+            "featureType": "administrative.neighborhood",
+            "elementType": "labels",
+            "stylers": [{
+                "visibility": "off"
+            }]
+        }, {
+            "featureType": "administrative.land_parcel",
+            "elementType": "labels",
+            "stylers": [{
+                "visibility": "off"
+            }]
+        }, {}],
     });
 
-    var infoWindow = new google.maps.InfoWindow({ map: map });
-    // Try HTML5 geolocation.
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude
-            };
+    // Create an array of alphabetical characters used to label the markers.
+    var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-            map.setCenter(pos);
-        }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
+    // Add some markers to the map.
+    // Note: The code uses the JavaScript Array.prototype.map() method to
+    // create an array of markers based on a given "locations" array.
+    // The map() method here has nothing to do with the Google Maps API.
+    var markers = locations.map(function(location, i) {
+        return new google.maps.Marker({
+            position: location,
+            label: labels[i % labels.length]
         });
-    } else {
-        // Browser doesn't support Geolocation
-        handleLocationError(false, infoWindow, map.getCenter());
-    }
-    var infowindow = new google.maps.InfoWindow({
-        content: contentString
     });
-    var marker = new google.maps.Marker({
-        position: { lat: 49.842560, lng: 24.035905 },
-        map: map,
-        title: 'Legalizuem.ru',
-        icon: {
-            url: "img//ball.svg",
-            scaledSize: new google.maps.Size(32, 32)
-        }
-    });
-    marker.addListener('click', function() {
-        infowindow.open(map, marker);
-    });
+
+    // Add a marker clusterer to manage the markers.
+    var markerCluster = new MarkerClusterer(map, markers, { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
 }
+var locations = [
+    { lat: -31.563910, lng: 147.154312 },
+    { lat: -33.718234, lng: 150.363181 },
+    { lat: -33.727111, lng: 150.371124 },
+    { lat: -33.848588, lng: 151.209834 },
+    { lat: -33.851702, lng: 151.216968 },
+    { lat: -34.671264, lng: 150.863657 },
+    { lat: -35.304724, lng: 148.662905 },
+    { lat: -36.817685, lng: 175.699196 },
+    { lat: -36.828611, lng: 175.790222 },
+    { lat: -37.750000, lng: 145.116667 },
+    { lat: -37.759859, lng: 145.128708 },
+    { lat: -37.765015, lng: 145.133858 },
+    { lat: -37.770104, lng: 145.143299 },
+    { lat: -37.773700, lng: 145.145187 },
+    { lat: -37.774785, lng: 145.137978 },
+    { lat: -37.819616, lng: 144.968119 },
+    { lat: -38.330766, lng: 144.695692 },
+    { lat: -39.927193, lng: 175.053218 },
+    { lat: -41.330162, lng: 174.865694 },
+    { lat: -42.734358, lng: 147.439506 },
+    { lat: -42.734358, lng: 147.501315 },
+    { lat: -42.735258, lng: 147.438000 },
+    { lat: -43.999792, lng: 170.463352 }
+]
+
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
