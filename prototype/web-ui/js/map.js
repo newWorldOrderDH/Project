@@ -148,8 +148,10 @@ function initMap() {
     var markers = locations.map(function(location, i) {
         return new google.maps.Marker({
             position: location,
-
-            label: labels[i % labels.length]
+            icon: {
+                url: "img//foot.png",
+                scaledSize: new google.maps.Size(48, 48)
+            }
         });
     });
 
@@ -171,9 +173,9 @@ var locations = [
     { lat: 49.841194, lng: 24.049651 },
     { lat: 49.840892, lng: 24.041287 },
 
-    { lat: 49.838630, lng: 24.015074},
-    { lat: 49.829556, lng: 24.003957},
-    { lat: 49.824094, lng: 24.004540},
+    { lat: 49.838630, lng: 24.015074 },
+    { lat: 49.829556, lng: 24.003957 },
+    { lat: 49.824094, lng: 24.004540 },
     { lat: 49.813748, lng: 24.010828 },
     { lat: 49.819312, lng: 24.048137 },
     { lat: 49.810714, lng: 24.072403 },
