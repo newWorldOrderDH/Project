@@ -28,9 +28,13 @@ document.addEventListener('DOMContentLoaded', function() {
     var databaseRef = database.ref().child('chat3');
 
     sendButton.addEventListener('click', function(evt) {
+
+        now = new Date();
+        time = ('00' + now.getHours()).slice(-2) + ':' + ('00' + now.getMinutes()).slice(-2) + ':' + ('00' + now.getSeconds()).slice(-2);
         var chat3 = {
             name: username,
-            message: textInput.value
+            message: textInput.value,
+            time: time
         };
         databaseRef.push().set(chat3);
         textInput.value = '';
@@ -107,9 +111,9 @@ document.addEventListener('DOMContentLoaded', function() {
         var li = document.createElement('li');
         li.className = "list-group-item";
         var nameElm = document.createElement('h4');
-        now = new Date();
+
         var time = document.createElement('h6');
-        time.innerText = ('00' + now.getHours()).slice(-2) + ':' + ('00' + now.getMinutes()).slice(-2) + ':' + ('00' + now.getSeconds()).slice(-2);
+        time.innerText = chat.time;
         nameElm.innerText = chat.name;
         li.appendChild(nameElm);
         li.appendChild(time);
