@@ -13,20 +13,20 @@
 </head>
 
 <body>
-    <div class="container1">
+<div class="container1">
 
-        <div class="map-section">
-            <div class="mapp">
-                <div id="map">
-                </div>
+    <div class="map-section">
+        <div class="mapp">
+            <div id="map">
             </div>
         </div>
-        <div class="chat-section">
-            <div id='header'>
-                <label for='username'>
+    </div>
+    <div class="chat-section">
+        <div id='header'>
+            <label for='username'>
                 <img src="https://www.gstatic.com/images/icons/material/system/1x/account_box_black_24dp.png" width=""/></label>
-                <span id='username'></span>
-                <span id='login'>
+            <span id='username'></span>
+            <span id='login'>
                 <button id="facebook" class="loginBtn loginBtn--facebook">
                     Login with Facebook
                   </button>
@@ -36,42 +36,54 @@
                   </button>
 
                 </span>
-                <button id='logout' class='btn btn-info btn-out'>Sign out</button>
-            </div>
+            <button id='logout' class='btn btn-info btn-out'>Sign out</button>
+        </div>
 
-            <p id = "about">Lorem ipsum dolor sit amet, nec habemus perpetua id. Sed et tollit referrentur concludaturque, ut mei novum tantas primis. Legere euismod moderatius vix te. Legimus meliore pericula in eos, cu civibus comprehensam cum.
+        <div class="about">
+            <h1>Вітаємо Вас на нашому веб-сайті!</h1>
+            <h4> Цей сайт був розроблений цей веб-сайт для того, щоб вирішувати проблеми: </h4>
+            <ul>
+                <li>Пошуку поля</li>
+                <li>Нестачі гравців у команді</li>
+                <li>Відсутності м'яча</li>
 
-                Pro exerci inciderint in. Sea populo nonumes placerat in, natum assentior mel ad. Ad mei zril prompta vituperatoribus, possit luptatum cu sea, sanctus vulputate cu vix. Alii menandri atomorum ne ius, ne eius illud malis qui. Fugit aeterno eu has, pri in unum dolor scripta, munere praesent incorrupte ex eum.
+            </ul>
+            <h4>Щоб продовжити рооботу з сайтом</h4>
+            <ol>
+                <li>залогінтеся через фейсбук або гугл+</li>
+                <li>виберіть маркер на карті, а замість цієї інформації відкриється чат</li>
+            </ol>
+        </div>
 
-                Sit mollis tamquam omnesque at, sea ut ocurreret assentior. Eos ei ludus inermis dignissim, in timeam quaeque splendide ius, per elitr expetenda explicari et. Suas adhuc altera ius et, ut sea affert accumsan. Nonumy aliquid eos ei, falli audiam sed ad, ex pri volutpat sadipscing.
 
-                Et persius molestie eloquentiam vel, nibh aliquam perfecto quo ne. Natum error ei eos, cum velit periculis voluptaria ne, ad ridens labitur efficiantur nec. An duis illud has. Sit ad iisque pertinacia. Et pri timeam sententiae interesset, ius ei tibique pertinacia, ea iriure partiendo eos. Ferri bonorum nec ut, apeirian convenire et has, alii ferri numquam eu mei.
+        <div class="chat">
+            <div class="push"></div>
+            <ul id='messages' class="list-group"></ul>
+        </div>
 
-                Utamur sapientem qui ei. Ei ius simul interpretaris, suas laudem eam ei, ei mel wisi nostrud iudicabit. An hinc congue essent sed, cum latine legimus consequat an. Sea te exerci munere vivendum, eu ius sumo nostrud fierent.</p>
-            <div class="chat">
-                <div class="push"></div>
-                <ul id='messages' class="list-group"></ul>
-            </div>
-
-            <div id='footer'>
-                <label class="fileContainer">
+        <div id='footer'>
+            <label class="fileContainer">
                 <img src="https://www.gstatic.com/images/icons/material/system/1x/add_a_photo_black_24dp.png"
                      width="24"/>
 
                 <img id="blah" src="#" alt="add your image" height="100" weight="100"/>
-                <input type="file" id="file" name="file" onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])"/>
+                <input type="file" id="file" name="file"
+                       onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])"/>
             </label>
-                <textarea id='text' class="long2" placeholder="Write a message"></textarea>
-                <button id='send' type="submit" class="btn btn-info btn-send" onclick="document.getElementById('blah').src ='#'">Send</button>
-            </div>
+            <textarea id='text' class="long2" placeholder="Write a message"></textarea>
+            <button id='send' type="submit" class="btn btn-info btn-send"
+                    onclick="document.getElementById('blah').src ='#'">Send
+            </button>
         </div>
+    </div>
 
-        <script src="//developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-        <script src="js/jquery.min.js" type="text/javascript"></script>
-        <script src="https://www.gstatic.com/firebasejs/3.0.0/firebase.js"></script>
-        <script src="js/map.js"></script>
-        <script src="js/firebase-connection.js"></script>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhZG8wNs9JvEMBzOiHPM1QUnYjn07GEos&callback=initMap"></script>
+    <script src="//developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.0.0/firebase.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/firebase-connection.js"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhZG8wNs9JvEMBzOiHPM1QUnYjn07GEos&callback=initMap"></script>
 </body>
 
 </html>
