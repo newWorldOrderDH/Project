@@ -32,14 +32,6 @@ $('textarea').keyup(function(event) {
     }
 });
 
-var contentString = '<div id="content">' +
-    '<div id="siteNotice">' +
-    '</div>' +
-    '<h1 id="firstHeading" class="firstHeading">Футбольне поле</h1>' +
-    '<div id="bodyContent">' +
-    '<p>Вулиця:<br>Тип поля:<br>Покриття поля:<br>Стан:добре/середнє/погано<br>Кількість гравців:0/11<br></p>' +
-    '</div>' +
-    '</div>';
 
 function initMap() {
 
@@ -137,6 +129,14 @@ function initMap() {
 
     // Create an array of alphabetical characters used to label the markers.
     var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var contentString = '<div id="content">' +
+        '<div id="siteNotice">' +
+        '</div>' +
+        '<h1 id="firstHeading" class="firstHeading">Футбольне поле</h1>' +
+        '<div id="bodyContent">' +
+        '<p>Вулиця:<br>Тип поля:<br>Покриття поля:<br>Стан:добре/середнє/погано<br>Кількість гравців:0/11<br></p>' +
+        '</div>' +
+        '</div>';
     var infowindow = new google.maps.InfoWindow({
         content: contentString
 
@@ -146,40 +146,231 @@ function initMap() {
     // create an array of markers based on a given "locations" array.
     // The map() method here has nothing to do with the Google Maps API.
     var markers = locations.map(function(location, i) {
-        return new google.maps.Marker({
+        var marker = new google.maps.Marker({
             position: location,
             icon: {
                 url: "img//foot.png",
                 scaledSize: new google.maps.Size(48, 48)
             }
         });
+        google.maps.event.addListener(marker, 'click', function(evt) {
+            infowindow.setContent(location.info);
+            infowindow.open(map, marker);
+        })
+        return marker;
     });
-
 
 
 
     // Add a marker clusterer to manage the markers.
     var markerCluster = new MarkerClusterer(map, markers, { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
 }
-var locations = [
-    { lat: 49.827678, lng: 24.009748 },
-    { lat: 49.828094, lng: 24.024636 },
-    { lat: 49.822882, lng: 24.030011 },
-    { lat: 49.829729, lng: 24.035933 },
-    { lat: 49.829016, lng: 24.040664 },
-    { lat: 49.836154, lng: 24.045871 },
-    { lat: 49.835228, lng: 24.051481 },
-    { lat: 49.842313, lng: 24.042909 },
-    { lat: 49.841194, lng: 24.049651 },
-    { lat: 49.840892, lng: 24.041287 },
+var locations = [{
+        lat: 49.827678,
+        lng: 24.009748,
+        info: '<div id="content">' +
+            '<div id="siteNotice">' +
+            '</div>' +
+            '<h1 id="firstHeading" class="firstHeading">Футбольне поле</h1>' +
+            '<div id="bodyContent">' +
+            '<p>Вулиця:<br>Тип поля:<br>Покриття поля:<br>Стан:добре/середнє/погано<br>Кількість гравців:0/11<br></p>' +
+            '</div>' +
+            '</div>'
+    },
+    {
+        lat: 49.828094,
+        lng: 24.024636,
+        info: '<div id="content">' +
+            '<div id="siteNotice">' +
+            '</div>' +
+            '<h1 id="firstHeading" class="firstHeading">Футбольне поле</h1>' +
+            '<div id="bodyContent">' +
+            '<p>Вулиця:<br>Тип поля:<br>Покриття поля:<br>Стан:добре/середнє/погано<br>Кількість гравців:0/11<br></p>' +
+            '</div>' +
+            '</div>'
+    },
+    {
+        lat: 49.822882,
+        lng: 24.030011,
+        info: '<div id="content">' +
+            '<div id="siteNotice">' +
+            '</div>' +
+            '<h1 id="firstHeading" class="firstHeading">Футбольне поле</h1>' +
+            '<div id="bodyContent">' +
+            '<p>Вулиця:<br>Тип поля:<br>Покриття поля:<br>Стан:добре/середнє/погано<br>Кількість гравців:0/11<br></p>' +
+            '</div>' +
+            '</div>'
+    },
+    {
+        lat: 49.829729,
+        lng: 24.035933,
+        info: '<div id="content">' +
+            '<div id="siteNotice">' +
+            '</div>' +
+            '<h1 id="firstHeading" class="firstHeading">Футбольне поле</h1>' +
+            '<div id="bodyContent">' +
+            '<p>Вулиця:<br>Тип поля:<br>Покриття поля:<br>Стан:добре/середнє/погано<br>Кількість гравців:0/11<br></p>' +
+            '</div>' +
+            '</div>'
+    },
+    {
+        lat: 49.829016,
+        lng: 24.040664,
+        info: '<div id="content">' +
+            '<div id="siteNotice">' +
+            '</div>' +
+            '<h1 id="firstHeading" class="firstHeading">Футбольне поле</h1>' +
+            '<div id="bodyContent">' +
+            '<p>Вулиця:<br>Тип поля:<br>Покриття поля:<br>Стан:добре/середнє/погано<br>Кількість гравців:0/11<br></p>' +
+            '</div>' +
+            '</div>'
+    },
+    {
+        lat: 49.836154,
+        lng: 24.045871,
+        info: '<div id="content">' +
+            '<div id="siteNotice">' +
+            '</div>' +
+            '<h1 id="firstHeading" class="firstHeading">Футбольне поле</h1>' +
+            '<div id="bodyContent">' +
+            '<p>Вулиця:<br>Тип поля:<br>Покриття поля:<br>Стан:добре/середнє/погано<br>Кількість гравців:0/11<br></p>' +
+            '</div>' +
+            '</div>'
+    },
+    {
+        lat: 49.835228,
+        lng: 24.051481,
+        info: '<div id="content">' +
+            '<div id="siteNotice">' +
+            '</div>' +
+            '<h1 id="firstHeading" class="firstHeading">Футбольне поле</h1>' +
+            '<div id="bodyContent">' +
+            '<p>Вулиця:<br>Тип поля:<br>Покриття поля:<br>Стан:добре/середнє/погано<br>Кількість гравців:0/11<br></p>' +
+            '</div>' +
+            '</div>',
+    },
+    {
+        lat: 49.842313,
+        lng: 24.042909,
+        info: '<div id="content">' +
+            '<div id="siteNotice">' +
+            '</div>' +
+            '<h1 id="firstHeading" class="firstHeading">Футбольне поле</h1>' +
+            '<div id="bodyContent">' +
+            '<p>Вулиця:<br>Тип поля:<br>Покриття поля:<br>Стан:добре/середнє/погано<br>Кількість гравців:0/11<br></p>' +
+            '</div>' +
+            '</div>'
+    },
+    {
+        lat: 49.841194,
+        lng: 24.049651,
+        info: '<div id="content">' +
+            '<div id="siteNotice">' +
+            '</div>' +
+            '<h1 id="firstHeading" class="firstHeading">Футбольне поле</h1>' +
+            '<div id="bodyContent">' +
+            '<p>Вулиця:<br>Тип поля:<br>Покриття поля:<br>Стан:добре/середнє/погано<br>Кількість гравців:0/11<br></p>' +
+            '</div>' +
+            '</div>'
+    },
+    {
+        lat: 49.840892,
+        lng: 24.041287,
+        info: '<div id="content">' +
+            '<div id="siteNotice">' +
+            '</div>' +
+            '<h1 id="firstHeading" class="firstHeading">Футбольне поле</h1>' +
+            '<div id="bodyContent">' +
+            '<p>Вулиця:<br>Тип поля:<br>Покриття поля:<br>Стан:добре/середнє/погано<br>Кількість гравців:0/11<br></p>' +
+            '</div>' +
+            '</div>'
+    },
 
-    { lat: 49.838630, lng: 24.015074 },
-    { lat: 49.829556, lng: 24.003957 },
-    { lat: 49.824094, lng: 24.004540 },
-    { lat: 49.813748, lng: 24.010828 },
-    { lat: 49.819312, lng: 24.048137 },
-    { lat: 49.810714, lng: 24.072403 },
-    { lat: 49.798473, lng: 24.059443 },
+    {
+        lat: 49.838630,
+        lng: 24.015074,
+        info: '<div id="content">' +
+            '<div id="siteNotice">' +
+            '</div>' +
+            '<h1 id="firstHeading" class="firstHeading">Футбольне поле</h1>' +
+            '<div id="bodyContent">' +
+            '<p>Вулиця:<br>Тип поля:<br>Покриття поля:<br>Стан:добре/середнє/погано<br>Кількість гравців:0/11<br></p>' +
+            '</div>' +
+            '</div>'
+    },
+    {
+        lat: 49.829556,
+        lng: 24.003957,
+        info: '<div id="content">' +
+            '<div id="siteNotice">' +
+            '</div>' +
+            '<h1 id="firstHeading" class="firstHeading">Футбольне поле</h1>' +
+            '<div id="bodyContent">' +
+            '<p>Вулиця:<br>Тип поля:<br>Покриття поля:<br>Стан:добре/середнє/погано<br>Кількість гравців:0/11<br></p>' +
+            '</div>' +
+            '</div>'
+    },
+    {
+        lat: 49.824094,
+        lng: 24.004540,
+        info: '<div id="content">' +
+            '<div id="siteNotice">' +
+            '</div>' +
+            '<h1 id="firstHeading" class="firstHeading">Футбольне поле</h1>' +
+            '<div id="bodyContent">' +
+            '<p>Вулиця:<br>Тип поля:<br>Покриття поля:<br>Стан:добре/середнє/погано<br>Кількість гравців:0/11<br></p>' +
+            '</div>' +
+            '</div>'
+    },
+    {
+        lat: 49.813748,
+        lng: 24.010828,
+        info: '<div id="content">' +
+            '<div id="siteNotice">' +
+            '</div>' +
+            '<h1 id="firstHeading" class="firstHeading">Футбольне поле</h1>' +
+            '<div id="bodyContent">' +
+            '<p>Вулиця:<br>Тип поля:<br>Покриття поля:<br>Стан:добре/середнє/погано<br>Кількість гравців:0/11<br></p>' +
+            '</div>' +
+            '</div>'
+    },
+    {
+        lat: 49.819312,
+        lng: 24.048137,
+        info: '<div id="content">' +
+            '<div id="siteNotice">' +
+            '</div>' +
+            '<h1 id="firstHeading" class="firstHeading">Футбольне поле</h1>' +
+            '<div id="bodyContent">' +
+            '<p>Вулиця:<br>Тип поля:<br>Покриття поля:<br>Стан:добре/середнє/погано<br>Кількість гравців:0/11<br></p>' +
+            '</div>' +
+            '</div>'
+    },
+    {
+        lat: 49.810714,
+        lng: 24.072403,
+        info: '<div id="content">' +
+            '<div id="siteNotice">' +
+            '</div>' +
+            '<h1 id="firstHeading" class="firstHeading">Футбольне поле</h1>' +
+            '<div id="bodyContent">' +
+            '<p>Вулиця:<br>Тип поля:<br>Покриття поля:<br>Стан:добре/середнє/погано<br>Кількість гравців:0/11<br></p>' +
+            '</div>' +
+            '</div>'
+    },
+    {
+        lat: 49.798473,
+        lng: 24.059443,
+        info: '<div id="content">' +
+            '<div id="siteNotice">' +
+            '</div>' +
+            '<h1 id="firstHeading" class="firstHeading">Футбольне поле</h1>' +
+            '<div id="bodyContent">' +
+            '<p>Вулиця:<br>Тип поля:<br>Покриття поля:<br>Стан:добре/середнє/погано<br>Кількість гравців:0/11<br></p>' +
+            '</div>' +
+            '</div>'
+    },
+
 ]
 
 
