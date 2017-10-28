@@ -22,8 +22,9 @@
 }
 
 #header {
+
     color: WHITE;
-    padding-top: 10px;
+    padding-top: 5px;
 }
 
 #map {
@@ -255,4 +256,12 @@ ul li {
 
 #messages {
     display: none;
+}
+
+
+
+.jumbotron{
+  padding: 10px 10px 10px 20px;
+  margin: 0;
+  height: 93vh;
 }
