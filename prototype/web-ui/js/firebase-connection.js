@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
             setUsername(user.displayName);
         } else {
             // User signed out, set a default username
-            setUsername("Web");
+            setUsername("");
         }
     });
 
@@ -92,11 +92,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function setUsername(newUsername) {
         if (newUsername == null) {
-            newUsername = "Web";
+            newUsername = "";
         }
         console.log(newUsername);
         username = newUsername;
-        var isLoggedIn = username != 'Web';
+        var isLoggedIn = username != '';
         usernameElm.innerText = newUsername;
         logout.style.display = isLoggedIn ? '' : 'none';
         facebookLogin.style.display = isLoggedIn ? 'none' : '';
@@ -131,5 +131,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     //window.app = app; // NOTE: just for debugging
     //for (var i=0; i < 10; i++) addMessage({ name: "Web", message: ''+i });
-    setUsername('Web');
 });
