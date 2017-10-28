@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
     auth.onAuthStateChanged(function(user) {
         if (user) {
             setUsername(user.displayName);
+            AddChat();
         } else {
             // User signed out, set a default username
             setUsername("");
@@ -132,6 +133,12 @@ document.addEventListener('DOMContentLoaded', function() {
         messagesList.appendChild(li);
         li.scrollIntoView(false);
         sendButton.scrollIntoView(false);
+    }
+
+    function AddChat() {
+        document.getElementById('text').style.display = 'block';
+        document.getElementById('footer').style.display = 'block';
+        document.getElementById('messages').style.display = 'block';
     }
     //window.app = app; // NOTE: just for debugging
     //for (var i=0; i < 10; i++) addMessage({ name: "Web", message: ''+i });

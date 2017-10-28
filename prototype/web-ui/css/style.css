@@ -151,7 +151,8 @@ ul li {
 }
 
 #footer {
-    padding: 5px
+    padding: 5px;
+    display: none;
 }
 
 ::-webkit-scrollbar-track {
@@ -246,3 +247,12 @@ ul li {
 .list-group-item:first-child {
     border-top: none;
 }
+
+#text {
+    display: none;
+}
+
+#messages {
+    display: none;
+}
+
