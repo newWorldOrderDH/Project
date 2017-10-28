@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('text').style.display = 'block';
         document.getElementById('footer').style.display = 'block';
         document.getElementById('messages').style.display = 'block';
-        document.getElementsByClassName('about').style.display = 'none';
+        document.getElementById('about').style.display = 'none';
     }
 
 
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('text').style.display = 'none';
         document.getElementById('footer').style.display = 'none';
         document.getElementById('messages').style.display = 'none';
-        document.getElementsByClassName('about').style.display = 'block';
+        document.getElementById('about').style.display = 'block';
 
     }
 
