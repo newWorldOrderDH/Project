@@ -242,3 +242,7 @@ ul li {
 .loginBtn--google:focus {
     background: #E74B37;
 }
+
+.list-group-item:first-child {
+    border-top: none;
+}
